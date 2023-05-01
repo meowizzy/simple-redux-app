@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchCustomers } from '../asyncActions/customers';
 import { getCash, addCash, addCustomer, removeCustomer } from '../store/actions';
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
   const handleRemoveCustomer = id => {
     dispatch(removeCustomer(id));
   };
+
+  useEffect(() => {
+    dispatch(fetchCustomers())
+  }, []);
+
 
   return (
     <div className="App">

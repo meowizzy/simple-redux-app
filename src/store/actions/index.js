@@ -1,4 +1,4 @@
-import { ADD_CASH, ADD_CUSTOMER, GET_CASH, REMOVE_CUSTOMER } from "../constants";
+import { ADD_CASH, ADD_CUSTOMER, GET_CASH, REMOVE_CUSTOMER, ADD_MANY_CUSTOMERS } from "../constants";
 
 export const addCash = cash => {
      return {
@@ -28,5 +28,12 @@ export const removeCustomer = id => {
      return {
           type: REMOVE_CUSTOMER,
           payload: id
+     }
+};
+
+export const addManyCustomersAction = customers => {
+     return {
+          type: ADD_MANY_CUSTOMERS,
+          payload: customers
      }
 };
